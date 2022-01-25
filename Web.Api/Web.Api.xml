@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Api.Controllers.SalaryController.GetAll(System.Int32,System.Int32,System.String)">
+            <summary>
+            This method return List item salaries (default paginate page = 1, take = 10, ids = null)
+            </summary>
+            <param name="page">This  parameter define  the number of page to show</param>
+            <param name="take">This parameter define how much item you want to get</param>
+            <param name="ids">This parameter set the especify ids that you want to get</param>           
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response> 
+            <response code="400">BadRequest. Error de validacióon de datos.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryController.Get(System.String)">
+            <summary>
+            This method return item Salary by employeeCode
+            </summary>
+            <param name="employeeCode">This parameter define the employeeCode </param>          
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response>
+            <response code="400">Bad Request. Error de validacióon de datos.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryController.Get(System.Int32)">
+            <summary>
+            This method return item Salary by id
+            </summary>
+            <param name="id">This parameter define the id </param>          
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response>
+            <response code="400">Bad Request. Error de validacióon de datos.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryController.Create(Service.EventHandlers.Commands.SalaryCreateCommand)">
+            <summary>
+            This method create new salary record
+            </summary>
+            <param name="command">This objet represent a new the salary record</param>          
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response> 
+            <response code="400">Bad Request. Error de validacióon de datos.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryController.CreateUpdatePeriod(Service.EventHandlers.Commands.SalaryCreatePeriodCommand)">
+            <summary>
+            This method create new salary periods records or update exist it
+            </summary>
+            <param name="command">This list object represent periods of salary, one employee </param>          
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response> 
+            <response code="400">Bad Request. Error de validacióon de datos.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryReportController.SalaryStimate(System.Int32,System.Int32)">
+            <summary>
+            This method return List item salaries estimate
+            </summary>         
+            <param name="page">This  parameter define  the number of page to show</param>
+            <param name="take">This parameter define how much item you want to get</param>
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response> 
+        </member>
+        <member name="M:Web.Api.Controllers.SalaryReportController.GetFilter(System.Int32,Service.Queries.Enums.Enums.FilterAction,System.Int32,System.Int32)">
+            <summary>
+            This method filters salary information based to an Employee
+            </summary>
+            <param name="id">This parameter is the id key record</param>  
+            <param name="action">This parameter represents the action filter that you want to get</param>  
+            <param name="page">This parameter define  the number of page to show</param>
+            <param name="take">This parameter define how much item you want to get</param>
+            <response code="200">OK. Devuelve el objeto solicitado.</response>        
+            <response code="404">NotFound. No se ha encontrado el objeto solicitado.</response> 
+            <response code="400">BadRequest. Error de validacióon de datos.</response> 
+        </member>
+    </members>
+</doc>
