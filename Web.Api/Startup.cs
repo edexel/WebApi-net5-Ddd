@@ -70,6 +70,14 @@ namespace Web.Api
                     }
                 });
             });
+            // Add Cors
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
 
         }
 
@@ -90,6 +98,8 @@ namespace Web.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee Salaries API V1");
             });
+            // Enable Cors
+            app.UseCors("MyPolicy");
 
             app.UseRouting();
 
